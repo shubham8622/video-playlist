@@ -1,38 +1,124 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: cursive;
+}
+.container{
+  max-width: 1400px;
+  padding-inline: 1rem;
+  margin-inline: auto;
+}
+.playlistimage{
+  cursor: pointer;
+}
+.playlistimage {
+  width: 10rem;
+}
+.playlistimage img{
+  max-width: 100%;
+}
+.playlistimage p{
+  text-transform: capitalize;
+}
+p.count-video {
+  position: absolute;
+  width: inherit;
+  height: 14.8rem;
+  color: #ffffff;
+  background-color: rgba(0,0,0,0.6);
+}
+span {
+  position: relative;
+  top: 7rem;
+  left: 7rem;
+}
+.create-playlist a {
+  text-decoration: none;
+  color: #000000;
+}
+.flex {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10rem;
+}
+.play-list-video {
+  width: 100%;
+  background-color: rgb(224 214 214 / 50%);
+  padding-inline: 2rem;
+  border-radius: 12px;
+}
+.p-listing {display: flex;flex-direction: column;align-items: inherit;gap: 2rem;}
+
+.p-listing .poster {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1rem;
+    background-color: #ffffff;
+}
+.p-listing .poster figure {
+  max-width: 6rem;
+  height: 8rem;
+}
+.p-listing a{
+  text-decoration: none;
+  color: #000000;
+}
+.owl-carousel.owl-theme a {
+  text-decoration: none;
+  color: #000000;
+}
+.p-listing .poster figure img {
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+section.notfond {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%,-50%);
+}
+section.notfond {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%,-50%);
+  width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.notfoundError {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.notfoundError h1 {
+  font-size: 6rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.notfoundError p {
+  font-size: 4rem;
+}
+@media(max-width:720px){
+  :root{
+    font-size: 10px;
   }
-  to {
-    transform: rotate(360deg);
+  .flex {
+    gap: 5rem;
   }
+
+}
+
+@media(max-width:425px){
+  :root{
+    font-size: 8px;
+  }
+  .flex {
+    gap: 5rem;
+  }
+
 }
