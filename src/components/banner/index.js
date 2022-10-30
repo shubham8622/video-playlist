@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const Banner = ({heading}) => {
   const dispatch = useDispatch();
   const data = useSelector(state=>state.video);
-  
+  // console.log(data);
   useEffect(()=>{
     dispatch(playlistRequest());
   },[]);
@@ -23,7 +23,7 @@ const Banner = ({heading}) => {
             </div>
             <div className="owl-carousel owl-theme">
               {
-                data.videos.data.map((allVideos,index)=>{
+                data.videos.data?.map((allVideos,index)=>{
                   return(
                   <>
                     <Link to={`/watch?v=${allVideos.name.split(" ").join("")}`}>
