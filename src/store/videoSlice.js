@@ -43,7 +43,10 @@ const videoSlice = createSlice({
 export const {playVideo,pauseVideo} = videoSlice.actions;
 export default videoSlice.reducer;
 export const playlistRequest = createAsyncThunk('fetch/playlist',async ()=>{
-    const res = await fetch("https://api-uat.greatmanagerinstitute.com/api/v2/getTrailerList");
+    const res = await fetch("https://api-uat.greatmanagerinstitute.com/api/v2/getTrailerList",{
+        method: 'GET',
+        mode: 'cors'
+    });
     const data = await res.json();
     return data;
 })
