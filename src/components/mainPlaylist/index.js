@@ -5,7 +5,7 @@ import { playlistRequest } from "../../store/videoSlice";
 const MainPlaylist = () => {
   const dispatch = useDispatch();
   const playlistData = useSelector(state=>state.video);
-  let playListLength = (playlistData.status!== 'loading')?playlistData.videos.data.length:0;
+  let playListLength = (playlistData.status!== 'loading')?playlistData.videos.length:0;
   useEffect(()=>{
     dispatch(playlistRequest());
   },[]);
@@ -25,7 +25,7 @@ const MainPlaylist = () => {
                   <Link to="list">
                     <div className="playlistimage">
                       <p className="count-video"><span>{playListLength}</span></p>
-                      <img src={playlistData.videos.data[0].poster} alt="" />
+                      <img src={playlistData.videos[0].poster} alt="" />
                       <p>Latest movie trailor</p>
                     </div>
                   </Link>

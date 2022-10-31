@@ -7,7 +7,7 @@ const Watch = () => {
     const dispatch = useDispatch();
     const [searchParams] = useSearchParams();
     let params = searchParams.get('v');
-    const data = useSelector(state=>state.video.videos.data);
+    const data = useSelector(state=>state.video.videos);
     let selectedVideo = (data !== undefined)?data.filter((currVideo)=>{
         if(currVideo.name.split(" ").join("") === params)  return currVideo;
     }):"";

@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const PlaylistListing = () => {
     const dispatch = useDispatch();
     const listing = useSelector(state=>state.video);
-    let playlistLength = (listing.status === "loading")?0:listing.videos.data.length;
+    let playlistLength = (listing.status === "loading")?0:listing.videos.length;
     useEffect(()=>{
         dispatch(playlistRequest());
     },[]);
@@ -22,11 +22,11 @@ const PlaylistListing = () => {
                     (playlistLength === 0)?<><p className="loading">Loading</p></>:
                     <>
                         {
-                            listing.videos.data.map((allDetails,index)=>{
+                            listing.videos.map((allDetails,index)=>{
                                 return(
                                     <>
                                         <Link to={`/watch?v=${allDetails.name.split(" ").join("")}`}>
-                                            <div className="poster" key={index}>
+                                            <div className="poster" key={allDetails._id}>
                                                 <figure>
                                                 <img src={(allDetails.name==="Solo: A Star Wars Story")?solo:allDetails.poster} alt="error" />
                                                 </figure>
