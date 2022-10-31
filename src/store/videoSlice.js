@@ -43,10 +43,7 @@ const videoSlice = createSlice({
 export const {playVideo,pauseVideo} = videoSlice.actions;
 export default videoSlice.reducer;
 export const playlistRequest = createAsyncThunk('fetch/playlist',async ()=>{
-    const res = await fetch("https://api-uat.greatmanagerinstitute.com/api/v2/getTrailerList",{
-        method: 'GET',
-        mode: 'cors'
-    });
+    const res = await fetch("https://playlist-api-xi.vercel.app/playlists");
     const data = await res.json();
     return data;
 })
