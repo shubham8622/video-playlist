@@ -43,4 +43,5 @@
 .poster p {
     font-size: 1.2rem;
     padding: 1rem 8px;
+    text-transform: uppercase;
 }
